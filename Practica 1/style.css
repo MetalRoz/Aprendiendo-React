@@ -1,0 +1,16 @@
+picture {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100px;
+}
+
+img {
+    border-radius: 50%;
+    width: 100px;
+}
+
+img.disabled {
+    box-shadow: 0 0 15px #999;
+    opacity: 0.3;
+}
