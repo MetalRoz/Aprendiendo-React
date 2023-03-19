@@ -1,29 +1,31 @@
 const app = document.getElementById("app")
+const useState = React.useState
 
-const h = React.createElement;
 
-const Avatar = params => {
-    const src = `https://randomuser.me/api/portraits/women/${params.id}.jpg`;
 
-    return h('img', {src})
+const Avatar = props => {
+    const [enabled, setEnabled] = useState(true)
+
+    const src = `https://randomuser.me/api/portraits/women/${props.id}.jpg`;
+
+    const className = enabled ? "" : "disabled"
+
+    return (
+        <picture>
+            <img onClick={() => {
+                setEnabled(!enabled)
+            }} className={className} src={src}></img>
+            <em>{props.name}</em>
+        </picture>
+    )
 };
 
-ReactDOM.render(h(Avatar, {id: 1}), app)
+ReactDOM.render(
+    <div>
+        <Avatar id={3} name="Ana"></Avatar>
+        <Avatar id={8} name="Maria"></Avatar>
+    </div>, app)
 
-
-// const Avatar = params => {
-//     const src = `https://randomuser.me/api/portraits/women/${params.id}.jpg`
-
-//     return `
-//     <picture>
-//     <img src="${src}">
-//     <em>${params.name}</em>
-//     </picture>
-//     `
-// }
-
-// app.innerHTML += Avatar ({ id: 5, name: "Andrea" })
-// app.innerHTML += Avatar ({ id: 3, name: "Paula" })
 
 // app.querySelectorAll("img").forEach(img => {
 //     img.addEventListener("click", () => {
