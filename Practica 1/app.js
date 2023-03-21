@@ -60,13 +60,13 @@ function Contador() {
 
 ReactDOM.render(
     <div>
+        <h1>Women in Tech</h1>
+        <Avatar id={3} name="Ana" size="small"></Avatar>
+        <Avatar id={8} name="Maria"></Avatar>
+        <Avatar id={4} name="Sara" size="large"></Avatar>
+        <h3>INCREMENTADOR | CONTADOR DE CLICKS</h3>
         <Contador></Contador>
     </div>, app
-    // <div>
-    //     <Avatar id={3} name="Ana" size="small"></Avatar>
-    //     <Avatar id={8} name="Maria"></Avatar>
-    //     <Avatar id={4} name="Sara" size="large"></Avatar>
-    // </div>, app
 )
 
 
